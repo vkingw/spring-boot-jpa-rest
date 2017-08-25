@@ -1,7 +1,9 @@
 # spring-boot-jpa-rest
 Spring Boot Accessing JPA Data with REST
 
-这是一个演示的例子
+这是一个Spring boot演示的例子
+
+src/resources/application.yml中配置redis参数等
 
 请在终端中执行
 
@@ -9,7 +11,18 @@ Spring Boot Accessing JPA Data with REST
 ./gradlew bootRun 
 ```
 
-服务即可运行，访问http://localhost:8080/api即可。
+访问 http://localhost:9000/swagger-ui.html 查看自定义Controller API
+
+通过tokens POST 获取token，然后在请求中带上
+
+```
+X-Auth-Token : token
+```
+
+访问http://localhost:8080/api即可。
+
+
+
 
 如需打包war，请执行
 
@@ -22,8 +35,6 @@ Spring Boot Accessing JPA Data with REST
 ```
 X-Auth-Token : XXX
 ```
-
-xxx可以是任意字符，这里只校验是否有X-Auth-Token，不校验其内容。
 
 如有问题请联系 wangxiao@wafersystems.com
 

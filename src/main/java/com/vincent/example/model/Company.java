@@ -1,4 +1,4 @@
-package example.bean;
+package com.vincent.example.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
@@ -22,10 +22,12 @@ import java.util.Set;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Company implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -245251661386627444L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Setter
+    @Getter
     private long id;
 
     @Description("Name need string")

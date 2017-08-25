@@ -12,7 +12,7 @@ import org.springframework.data.repository.CrudRepository;
  * Date : 2017/8/1 下午5:30
  * Email : wangxiao@wafersystems.com
  */
-public abstract class UserRepository implements CrudRepository<User, Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
 
-  public abstract User findUserByName(String name);
+  User findUserByName(String name);
 }

@@ -1,10 +1,17 @@
 buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE")
-    }
+  ext {
+    springBootVersion = '1.5.6.RELEASE'
+  }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  }
+}
+
+repositories {
+  mavenCentral()
 }
 
 apply plugin: 'java'
@@ -12,25 +19,28 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
-jar {
-    baseName = 'spring-rest-example'
-    version = '0.1.0'
+bootRun {
+  addResources = true
 }
 
-repositories {
-    mavenCentral()
-}
-
+version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-data-rest")
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("org.springframework.boot:spring-boot-starter-security")
-    compile("org.springframework.boot:spring-boot-devtools")
-    compile("com.h2database:h2")
-    compileOnly "org.projectlombok:lombok"
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+  compile("org.springframework.boot:spring-boot-starter-data-rest")
+  compile("org.springframework.boot:spring-boot-starter-security")
+  compile("org.springframework.boot:spring-boot-starter-data-jpa")
+  compile("org.springframework.boot:spring-boot-starter-hateoas")
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.boot:spring-boot-starter-data-redis")
+  compile("io.springfox:springfox-swagger2:2.7.0")
+  compile("io.springfox:springfox-swagger-ui:2.7.0")
+  compile("io.jsonwebtoken:jjwt:0.7.0")
+  runtime("org.springframework.boot:spring-boot-devtools")
+  runtime("com.h2database:h2")
+  compileOnly("org.projectlombok:lombok")
+  testCompile("org.springframework.boot:spring-boot-starter-test")
+  testCompile('org.springframework.security:spring-security-test')
 }
 

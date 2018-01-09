@@ -38,13 +38,13 @@ public class RedisTokenManager implements TokenManager {
   public TokenModel createToken(User user) throws Exception {
     JwtUtil jwtUtil = new JwtUtil();
     String token = jwtUtil.createJWT(user.getUserId(), JwtUtil.generalSubject(user), Constants.JWT_TTL_LONG);
-    TokenModel model = new TokenModel(user.getId(), user.getName(), token);
+    TokenModel model = new TokenModel(user.getId(), user.getUserId(), user.getName(), token);
     //存储到redis并设置过期时间
     redis.boundValueOps(user.getId()).set(token, Constants.TOKEN_EXPIRES_HOUR, TimeUnit.HOURS);
     return model;
   }
 
-  public TokenModel getToken(String authentication) throws Exception {
+  public TokenModel getToken(String authentication) {
     if (authentication == null || authentication.length() == 0) {
       return null;
     }
@@ -53,7 +53,7 @@ public class RedisTokenManager implements TokenManager {
       Claims claims = jwtUtil.parseJWT(authentication);
       ObjectMapper mapper = new ObjectMapper();
       User user = mapper.readValue(claims.getSubject(), User.class);
-      return new TokenModel(user.getId(), user.getName(), authentication);
+      return new TokenModel(user.getId(), user.getUserId(), user.getName(), authentication);
     } catch (Exception e) {
       return null;
     }
@@ -63,12 +63,12 @@ public class RedisTokenManager implements TokenManager {
     if (model == null) {
       return false;
     }
-    String token = redis.boundValueOps(model.getUserId()).get();
+    String token = redis.boundValueOps(model.getId()).get();
     if (token == null || !token.equals(model.getToken())) {
       return false;
     }
     //如果验证成功，说明此用户进行了一次有效操作，延长token的过期时间
-    redis.boundValueOps(model.getUserId()).expire(Constants.TOKEN_EXPIRES_HOUR, TimeUnit.HOURS);
+    redis.boundValueOps(model.getId()).expire(Constants.TOKEN_EXPIRES_HOUR, TimeUnit.HOURS);
     return true;
   }
 

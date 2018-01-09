@@ -23,7 +23,7 @@ import static com.vincent.example.config.Constants.AUTHORIZATION;
  * @see com.vincent.example.authorization.annotation.CurrentUser
  * Created : vincent
  * Date : 2017/8/1 下午5:30
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Component
 @Slf4j

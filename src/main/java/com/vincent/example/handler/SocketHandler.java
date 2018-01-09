@@ -12,7 +12,7 @@ import static com.vincent.example.config.Constants.SOCKET_SESSION_USER_ID;
 /**
  * Created : vincent
  * Date : 2017/10/23 上午9:22
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Service
 @Slf4j

@@ -31,7 +31,7 @@ import static com.vincent.example.config.Constants.SOCKET_PUSH_PATH_ROOT;
 /**
  * Created : vincent
  * Date : 2017/8/3 下午12:01
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 
 @Configurable

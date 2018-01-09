@@ -10,7 +10,7 @@ import org.springframework.data.repository.CrudRepository;
  * @see com.vincent.example.model.User
  * Created : vincent
  * Date : 2017/8/1 下午5:30
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 public interface UserRepository extends CrudRepository<User, Long> {
 

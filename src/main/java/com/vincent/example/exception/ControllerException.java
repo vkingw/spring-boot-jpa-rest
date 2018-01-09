@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 /**
  * Created : vincent
  * Date : 2017/10/9 下午8:27
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Getter
 public class ControllerException extends Exception {

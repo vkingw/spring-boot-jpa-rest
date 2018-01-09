@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created : vincent
  * Date : 2017/8/2 下午4:46
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {

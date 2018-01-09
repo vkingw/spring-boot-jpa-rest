@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * Created : vincent
  * Date : 2017/10/9 下午8:14
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {

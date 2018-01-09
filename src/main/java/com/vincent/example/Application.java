@@ -18,7 +18,7 @@ import javax.annotation.PostConstruct;
 /**
  * Created : vincent
  * Date : 2017/5/11 上午10:35
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @SpringBootApplication
 @EnableSwagger2

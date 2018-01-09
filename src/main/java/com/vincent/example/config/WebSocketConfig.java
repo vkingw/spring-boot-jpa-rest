@@ -16,7 +16,7 @@ import static com.vincent.example.config.Constants.SOCKET_PUSH_PATH_ROOT;
 /**
  * Created : vincent
  * Date : 2017/10/23 上午8:17
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Configuration
 @EnableWebSocket

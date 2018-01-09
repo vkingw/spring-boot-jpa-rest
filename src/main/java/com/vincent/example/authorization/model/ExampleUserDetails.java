@@ -8,7 +8,7 @@ import java.util.Collection;
 /**
  * Created : vincent
  * Date : 2017/8/18 下午5:37
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 public class ExampleUserDetails implements UserDetails {
 

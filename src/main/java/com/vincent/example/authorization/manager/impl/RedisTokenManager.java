@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  * @see TokenManager
  * Created : vincent
  * Date : 2017/8/1 下午5:30
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Component
 public class RedisTokenManager implements TokenManager {

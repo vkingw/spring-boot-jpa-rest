@@ -13,7 +13,7 @@ import static com.vincent.example.config.Constants.SOCKET_PUSH_PATH_ROOT;
 /**
  * Created : vincent
  * Date : 2017/8/18 下午5:30
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Slf4j
 public class ExampleAuthenticationFilter extends AbstractPreAuthenticatedProcessingFilter {

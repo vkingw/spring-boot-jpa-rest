@@ -12,7 +12,7 @@ import java.util.Date;
  * 自定义错误返回结果
  * Created : vincent
  * Date : 2017/5/11 上午10:24
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Getter
 @Setter

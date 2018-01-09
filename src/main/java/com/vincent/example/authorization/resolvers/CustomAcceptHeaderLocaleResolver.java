@@ -10,7 +10,7 @@ import java.util.Locale;
 /**
  * Created : vincent
  * Date : 2017/11/21 下午4:15
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 public class CustomAcceptHeaderLocaleResolver extends AcceptHeaderLocaleResolver {
 

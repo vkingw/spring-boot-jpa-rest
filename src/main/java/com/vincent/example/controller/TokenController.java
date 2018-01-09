@@ -32,7 +32,7 @@ import static com.vincent.example.config.Constants.AUTHORIZATION;
 /**
  * Created : vincent
  * Date : 2017/8/3 下午12:40
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Controller
 @RequestMapping("${spring.data.rest.base-path}")

@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * Created : vincent
  * Date : 2017/10/11 上午10:15
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Getter
 @Setter

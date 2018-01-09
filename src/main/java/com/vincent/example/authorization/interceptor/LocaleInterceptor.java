@@ -14,7 +14,7 @@ import static com.vincent.example.config.Constants.LANG;
 /**
  * Created : vincent
  * Date : 2017/11/21 下午5:50
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 public class LocaleInterceptor extends LocaleChangeInterceptor {
 

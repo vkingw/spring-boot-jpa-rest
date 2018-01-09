@@ -11,7 +11,7 @@ import java.util.Date;
 /**
  * Created : vincent
  * Date : 2017/5/11 上午10:24
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Entity
 @Getter

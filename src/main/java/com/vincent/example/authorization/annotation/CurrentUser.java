@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * @see com.vincent.example.authorization.resolvers.CurrentUserMethodArgumentResolver
  * Created : vincent
  * Date : 2017/8/1 下午5:30
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)

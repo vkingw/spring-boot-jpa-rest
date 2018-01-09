@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created : vincent
  * Date : 2017/5/11 上午10:31
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @RepositoryRestResource(collectionResourceRel = "employees", path = "employees")
 public interface EmployeeRepository extends PagingAndSortingRepository<Employee, Long> {

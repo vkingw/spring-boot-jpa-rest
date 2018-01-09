@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * Created : vincent
  * Date : 2017/5/11 上午10:44
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 @Entity
 @RequiredArgsConstructor

@@ -8,7 +8,7 @@ import com.vincent.example.model.User;
  * 对Token进行操作的接口
  * Created : vincent
  * Date : 2017/8/1 下午5:30
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 public interface TokenManager {
 

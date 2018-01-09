@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created : vincent
  * Date : 2017/8/18 下午5:35
- * Email : wangxiao@wafersystems.com
+ * Email : alfa.king+git@gmail.com
  */
 public class ExampleAuthenticationUserDetailsService implements
   AuthenticationUserDetailsService<PreAuthenticatedAuthenticationToken> {

@@ -1,18 +1,21 @@
 package com.vincent.example.authorization.resolvers;
 
 import com.vincent.example.authorization.annotation.CurrentUser;
-import com.vincent.example.config.Constants;
+import com.vincent.example.authorization.manager.TokenManager;
+import com.vincent.example.authorization.model.TokenModel;
 import com.vincent.example.model.User;
 import com.vincent.example.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
-import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
-import org.springframework.web.multipart.support.MissingServletRequestPartException;
+
+import static com.vincent.example.config.Constants.AUTHORIZATION;
 
 /**
  * 增加方法注入，将含有CurrentUser注解的方法参数注入当前登录用户
@@ -23,10 +26,14 @@ import org.springframework.web.multipart.support.MissingServletRequestPartExcept
  * Email : wangxiao@wafersystems.com
  */
 @Component
+@Slf4j
 public class CurrentUserMethodArgumentResolver implements HandlerMethodArgumentResolver {
 
   @Autowired
   private UserRepository userRepository;
+
+  @Autowired
+  private TokenManager tokenManager;
 
   @Override
   public boolean supportsParameter(MethodParameter parameter) {
@@ -39,16 +46,20 @@ public class CurrentUserMethodArgumentResolver implements HandlerMethodArgumentR
   }
 
   @Override
-  public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
-                                NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws
-    Exception {
+  public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest
+    webRequest, WebDataBinderFactory binderFactory) throws UsernameNotFoundException {
     //取出鉴权时存入的登录用户Id
-    Long currentUserId = (Long) webRequest.getAttribute(Constants.CURRENT_USER_ID, RequestAttributes
-      .SCOPE_REQUEST);
-    if (currentUserId != null) {
-      //从数据库中查询并返回
-      return userRepository.findOne(currentUserId);
+    String token = webRequest.getHeader(AUTHORIZATION);
+    TokenModel tokenModel = null;
+    try {
+      tokenModel = tokenManager.getToken(token);
+    } catch (Exception e) {
+      log.error(e.getMessage(), e);
     }
-    throw new MissingServletRequestPartException(Constants.CURRENT_USER_ID);
+    if (tokenModel != null && tokenManager.checkToken(tokenModel)) {
+      return userRepository.findUserByUserId(tokenModel.getUserId());
+    } else {
+      throw new UsernameNotFoundException("NULL");
+    }
   }
 }

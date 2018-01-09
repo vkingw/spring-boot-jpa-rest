@@ -4,6 +4,7 @@ package com.vincent.example.model;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.Date;
 
@@ -36,13 +37,13 @@ public class ErrorResultModel {
 
   private String path;
 
-  public static ErrorResultModel error(HttpStatus httpStatus, String error) {
+  public static ResponseEntity<ErrorResultModel> error(HttpStatus httpStatus, String error) {
     ErrorResultModel errorResultModel = new ErrorResultModel();
     errorResultModel.setTimestamp(new Date().getTime());
     errorResultModel.setStatus(httpStatus.value());
     errorResultModel.setError(httpStatus.getReasonPhrase());
     errorResultModel.setMessage(error);
-    return errorResultModel;
+    return new ResponseEntity<>(errorResultModel, httpStatus);
   }
 
 }

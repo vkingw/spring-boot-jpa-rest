@@ -14,8 +14,7 @@ import java.util.List;
  * Email : wangxiao@wafersystems.com
  */
 @RepositoryRestResource(collectionResourceRel = "employees", path = "employees")
-public interface EmployeeRepository extends PagingAndSortingRepository<Employee, Long>,
-  EmployeeRepositoryCustom {
+public interface EmployeeRepository extends PagingAndSortingRepository<Employee, Long> {
 
   /**
    * @param name search by name

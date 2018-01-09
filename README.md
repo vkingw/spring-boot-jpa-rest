@@ -1,7 +1,9 @@
 # spring-boot-jpa-rest
 Spring Boot Accessing JPA Data with REST
 
-这是一个Spring boot演示的例子
+这是一个Spring boot的例子
+
+集成了WebSocket、redis、springfox-swagger2、jwt
 
 src/resources/application.yml中配置redis参数等
 
@@ -24,10 +26,10 @@ X-Auth-Token : token
 
 
 
-如需打包war，请执行
+如需打包jar，请执行
 
 ```
-./mvnw package    
+./gradlew build -i   
 ```
 
 所有请求请在header中加入 
@@ -36,5 +38,5 @@ X-Auth-Token : token
 X-Auth-Token : XXX
 ```
 
-如有问题请联系 wangxiao@wafersystems.com
+如有问题请联系 alfa.king+git@gmail.com
 

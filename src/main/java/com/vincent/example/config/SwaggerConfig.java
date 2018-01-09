@@ -35,7 +35,7 @@ public class SwaggerConfig {
       .title("Spring Boot中使用Swagger2构建RESTful APIs")
       .description("构建Controller RESTful APIs")
       .termsOfServiceUrl("https://github.com/vkingw")
-      .contact(new Contact("Vincent", "https://github.com/vkingw", "wangxiao@wafersystems.com"))
+      .contact(new Contact("Vincent", "https://github.com/vkingw", "alfa.king+java@gmail.com"))
       .version("1.0")
       .build();
   }

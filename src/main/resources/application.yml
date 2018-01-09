@@ -1,22 +1,3 @@
 spring:
-  data:
-    rest:
-      base-path: api
-      default-page-size: 10
-
-  http:
-    multipart:
-      maxFileSize: 5MB
-
-  redis:
-    host: 127.0.0.1
-    port: 6379
-
-server:
-  port: 9000
-
-logging:
-  level:
-    org.springframework.web: DEBUG
-    com.vincent.example: DEBUG
-    springfox: DEBUG
+  profiles:
+    active: dev

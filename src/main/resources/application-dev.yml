@@ -1,0 +1,58 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  data:
+    rest:
+      base-path: api
+      default-page-size: 10
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:db_test;MODE=MYSQL;
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-test-query: SELECT 1
+      minimum-idle: 5
+      pool-name: bosPoolName
+      max-lifetime: 1800000
+      maximum-pool-size: 100
+      idle-timeout: 10000
+
+  http:
+    multipart:
+      maxFileSize: 5MB
+
+  mail:
+    host: smtp.263.net
+    username: a@a.com
+    password: 123
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+server:
+  port: 9000
+
+logging:
+  config: classpath:logging-config.xml
+
+logback:
+  logdir: ./log
+  appname: spring.example
+  level: DEBUG
+
+custom:
+  variables:
+    swagger2:
+      switch: true

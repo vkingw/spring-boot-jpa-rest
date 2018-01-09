@@ -14,8 +14,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class TokenModel {
 
+  private long id;
+
   //用户id
-  private long userId;
+  private String userId;
 
   //name
   private String userName;
